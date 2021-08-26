@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+// Colors
+@import "variables.scss";
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  background-color: $light-color;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: #fff;
+  font-weight: 500;
+  padding: 0.4rem 1.2rem;
+
+  i {
+    vertical-align: middle;
+  }
+  span {
+    margin-left: 4px; 
+    vertical-align: middle;
+  }
+
+  &:hover, &:focus {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+.badge {
+  vertical-align: middle;
+  background-color: $primary-color;
+}
+
+.form-control {
+  font-size: 0.875rem;
+}
+
+.header-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 2rem;
+  box-shadow: $box-shadow;
+  background-color: #fff;
+  z-index: 9;
+  
+
+  .brand-logo {
+    img {
+      max-height: 28px;
+      margin-top: 0.3rem;
+    }
+  }
+
+  .app-search {
+    position: relative;
+    .form-control {
+      border: none;
+      height: 38px;
+      padding-left: 20px;
+      padding-right: 40px;
+      background-color: #f8f9fa;
+      box-shadow: none;
+      border-radius: 30px;
+      font-weight: 500;
+    }
+    span {
+      position: absolute;
+      z-index: 10;
+      line-height: 38px;
+      right: 16px;
+      top: 0;
+      color: #5b626b;
+      font-weight: 600;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+    
+  }
+
+  .notification-dropdown {
+    position: relative;
+    .notification-icon {
+      padding: 0.3rem 1rem 0;
+      font-size: 1.2rem;
+    }
+    > span {
+      position: absolute;
+      top: 4px;
+      right: 7px;
+      background-color: #ff0000;
+      color: #fff;
+      font-size: .75rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 14px;
+    }
+  }
+
+  .header-user-dropdown {
+    padding-left: 0.5rem;
+
+    .user-icon {
+      width: 36px;
+      height: 36px;
+      background-color: $primary-color;
+      line-height: 36px;
+      text-align: center;
+      color: #fff;
+      border-radius: 50%;
+    }
+  }
+}
+
+.vertical-menu {
+  width: 50px;
+  background: $primary-color;
+  position: fixed;
+  top: 58px;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 15px 10px #ddd;
+  
+  .brand-logo {
+    padding: 1rem 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .side-nav > {
+    ul {
+      > li {
+        position: relative;
+        > a {
+          text-align: center;
+          padding: .8rem 0;
+          display: block;
+          color: #fff;
+
+          svg {
+            display: inline-block;
+          }
+
+          span {
+            font-size: 1rem;
+            display: inline-block;
+            padding-left: 1rem;
+          }
+          &:hover {
+            background-color: $secondary-color;
+            color: #fff;
+          }
+        }
+
+        &.active {
+          > a {
+            background-color: $secondary-color;
+            color: #fff;
+          }
+        }
+
+        .sub-menu {
+          position: absolute;
+          left: 50px;
+          top: 0;
+          width: 210px;
+          border: 1px solid #eee;
+          border-width: 0 1px 1px 0;
+          visibility: hidden;
+          opacity: 0;
+          transition: all ease-in-out 0.3s;
+
+          li {
+            a {
+              font-size: 0.875rem;
+              padding: 13px 1rem;
+              display: block;
+              font-weight: 500;
+              color: #333;
+
+              &:hover {
+                color: $primary-color;
+              }
+            }
+
+            &:first-child {
+              a {
+                background-color: $primary-color;
+                font-weight: 600;
+                color: #fff;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          .sub-menu {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main-content {
+  padding: 1.5rem;
+  padding-left: calc(1.5rem + 50px);
+  padding-top: calc(1.5rem + 60px);
+}
+
+.card {
+  box-shadow: #63636333 0px 2px 8px 0;
+  border: 0;
+  margin-bottom: 1.5rem;
+  height: calc(100% - 1.5rem);
+
+  .card-body {
+    padding: 1.3rem;
+  }
+
+  .card-title {
+    h3 {
+      font-size: 1.1rem;
+      position: relative;
+      margin-bottom: 1.7rem;
+  
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -0.3rem;
+        height: 2px;
+        width: 50px;
+        background-color: $secondary-color;
+      }
+    }
+  }
+}
+
+.table-wraper {
+  table {
+    width: 100%;
+
+    thead {
+      tr {
+        background-color: $primary-color;
+        color: #fff;
+      }
+    }
+
+    tbody {
+      tr:nth-child(even) {
+        background-color: $light-color;
+      }
+    }
+
+    td, th {
+      padding: 0.8rem 0.8rem;
+      min-height: 50px;
+
+      &:last-child {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.small-avtar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-block;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.pagination-bar {
+  margin-top: 1rem;
+  text-align: center;
+
+  .pagination-bar-inner {
+    display: inline-block;
+  }
+
+  .pagination {
+    border:1px solid $primary-color;
+    border-radius: 4px;
+  }
+
+  .page-item {
+    .page-link {
+      border: 0;
+      margin: 0;
+      background-color: transparent;
+      color: $primary-color;
+    }
+
+    &:first-child, &:last-child {
+      .page-link {
+        border-radius: 0;
+      }
+    }
+
+    &.active, &:hover {
+      .page-link {
+        background-color: $primary-color;
+        color: #fff;
+      }
+    }
+  }
+}
