@@ -10,7 +10,7 @@ const Routes = () => {
     <Switch>
         <WithNavRoutes
           exact
-          path="/"
+          path="/deshboard"
           component={(props) => <Dashboard {...props} />}
         />
       </Switch>
