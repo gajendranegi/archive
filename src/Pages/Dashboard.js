@@ -6,6 +6,7 @@ import { LatestOrder } from '../Components/Pages/Dashboard/LatestOrder';
 import { RecentActivities } from '../Components/Pages/Dashboard/RecentActivities';
 
 export const Dashboard = () => {
+  
   return (
     <React.Fragment>
       <Metric/>
